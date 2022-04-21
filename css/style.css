@@ -1,0 +1,395 @@
+/* GLOBALES */
+
+:root{
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#ffc107;
+    --secundario:#0097a7;
+    --gris:#757575;
+    --gris_claro: #e6eaee;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;         /* Para que el padding, border, etc no afecte el tamaño de las imagenes */
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;        /* para que se desplace lentamente en los enlaces */
+}
+
+*, *:before, *:after {              /* idem */
+    box-sizing: inherit;
+  }
+
+body{
+    font-size: 16px;               /*  1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--gris_claro) 0%, var(--blanco) 100%);
+}
+
+
+.contenedor{
+    max-width: 100%;              /* Usamos "max-width: 120rem" o sino "width:100%" para que no se quede cortado el ancho */
+    margin: 0 auto;
+}   
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(41,41,41,0.89);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(41,41,41,0.89);
+    box-shadow: 0px 5px 15px 0px rgba(41,41,41,0.89);
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    margin: 0 1rem;
+}
+
+/* SCROLL SNAP */
+
+h1{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.sombra,
+.padding_bottom{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+@media (min-width: 768px) {
+    h1,
+    .sombra,
+    .padding_bottom{
+        scroll-snap-align: none;
+    }
+}
+
+/* HEADINGS */
+
+h1{
+    font-size: 3.2rem;
+}
+
+h1 span{
+    font-size: 2rem;
+}
+
+h2{
+    margin: 2rem 0rem;
+    padding-top: 3rem;
+    font-size: 2.5rem;
+
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+p{
+    color: var(--oscuro);
+}
+
+/* BOTONES */
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 25rem;
+    text-align: center;
+}
+
+.boton:hover {
+	color: var(--oscuro);
+    background-color: var(--primario);
+    cursor: pointer;
+}
+
+/* @media (min-width: 768px) {          Por si quiero dar otro formato al boton en celular
+  .boton{
+      width: 25rem;
+  }
+} */
+
+
+/* NAVEGACION */
+
+.navegacion_bg{
+    background-color: var(--secundario);
+}
+
+.navegacion_ppal{
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion_ppal{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.navegacion_ppal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+}
+
+.navegacion_ppal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+    
+}
+
+/* HERO */
+
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+}  
+
+.contenido-hero{
+    /* background-color: rgb(0,0,0, .6); otra forma */
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7rem;
+}
+
+.contenido-hero h2{
+    color: var(--blanco);
+    margin-top: -3rem;
+    font-size: 2.8rem;
+}
+
+.contenido-hero p{
+    color: var(--blanco);
+
+}
+
+
+/* UBICACION - MAPA */
+
+.align_map{
+    display: flex;
+    align-items: end;
+}
+
+.map{
+    border-radius: 50%;
+    outline: 0px solid;
+    outline-color: var(--primario);
+    margin-left: -1rem;
+}
+
+.map:hover{
+    outline: 1px solid;
+    outline-color: rgba(71, 126, 232, 0);
+    outline-offset: 20rem;
+    transition-duration: 800ms;
+}
+
+/* SERVICIOS */
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+    
+}
+
+.servicio p{
+    line-height: 2;
+    margin: 1rem;
+    text-align: justify;
+}
+
+.servicios{
+    display:flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .servicios{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.iconos{
+    width: 14rem;
+    height: 14rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TRABAJOS */
+
+.slider{
+    width: 80%;
+    height: 40rem;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px 0px rgba(41,41,41,0.89);
+    border-radius: .5rem;
+}
+
+@media (min-width: 960px) {
+    .slider{
+        width: 55%;
+    }
+}
+
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+
+    animation: cambio 10s infinite alternate linear;
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img{
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+
+
+/* BLOG */
+
+
+/* FORMULARIO */
+
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);          /* "min" te indica que pone el valor mas pequeño: si 60rem o el 100% del ancho */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-transform: uppercase;
+    color: var(--primario);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+      .contenedor-campos{
+        display: grid;
+        column-gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+.campos:nth-child(3),
+.campos:nth-child(4) {
+    grid-column: 1/3;
+}
+
+.campos{
+    margin-bottom: 2rem;
+}
+
+.campos label{
+    font-weight: bold;
+    color: var(--blanco);
+    display: flex;
+    margin-bottom: .3rem;
+}
+
+.input_text{
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    border-radius: .5rem;
+    border-style: none;
+    margin: 0rem 0rem;
+}
+
+.enviar{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .enviar input{
+        width: 30%;
+    }
+    }
+
+@media (min-width: 650px) {
+    .padding_bottom{
+        padding-bottom: 2.5rem;
+    }  
+}
+
+.padding_bottom h2{
+    margin-top: -1rem;
+}
+
+/* BOTON ARRIBA */
+
+.boton_arriba{
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+
+}
+
+/* FOOTER */
+
+footer{
+    text-align: center;
+}
