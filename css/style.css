@@ -12,7 +12,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;         /* Para que el padding, border, etc no afecte el tamaño de las imagenes */
-    scroll-snap-type: y proximity;
+        /* scroll-snap-type: y proximity; */
     scroll-behavior: smooth;        /* para que se desplace lentamente en los enlaces */
 }
 
@@ -29,7 +29,7 @@ body{
 
 .contenedor{
     max-width: 100%;              /* Usamos "max-width: 120rem" o sino "width:100%" para que no se quede cortado el ancho */
-    margin: 0 auto;
+    padding: 1rem 3rem;
 }   
 
 .sombra{
@@ -72,10 +72,8 @@ h1 span{
 }
 
 h2{
-    margin: 2rem 0rem;
-    padding-top: 3rem;
     font-size: 2.5rem;
-
+    padding-top: 1rem;
 }
 
 h3{
@@ -169,7 +167,6 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 7rem;
 }
 
 .contenido-hero h2{
@@ -222,6 +219,7 @@ p{
 .servicios{
     display:flex;
     flex-direction: column;
+    margin: 2rem auto;
 }
 
 @media (min-width: 768px) {
@@ -252,16 +250,17 @@ p{
 /* TRABAJOS */
 
 .slider{
-    width: 80%;
-    height: 40rem;
-    margin: auto;
+    max-height: 40rem;
+    height: 100%;
+    margin: 2rem auto;
     overflow: hidden;
     border-radius: .5rem;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 960px) {         /* CORREGIR!!!!!!!!!!!!!!!!!! */
     .slider{
-        width: 55%;
+        width: 100%;
+        max-width: 85rem;
     }
 }
 
@@ -299,32 +298,88 @@ p{
 /* BLOG */
 
 .blog-contain{
-    max-width: 100rem;
+    max-width: 85rem;
+    width: 100%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 .blog-noticias{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 0;
+    padding-bottom: 2rem;
 }
 
 .blog-noticias a{
     text-decoration: none;
+    color: var(--oscuro);
+    margin-top: 1rem;
 }
 
 .noticias{
     display: flex;
-    flex-direction: row-reverse;
-    text-align: start;
-    margin: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.noticias img{
-    max-width: 100rem;
+.noticias div{
     width: 50%;
-    margin: 2rem;
+    margin: 0rem 2rem -.5rem 2rem;
+}
+
+.noticias h3{
+    font-weight: inherit; 
+    font-size: 1.2rem;
+}
+
+.noticias:nth-child(1){
+    margin-top: 1rem;
+}
+
+.noticias-img{
+    height: 10rem;
+    overflow: hidden;
+    border-radius: .5rem;
+}
+
+.noticias-img img{
+    width: 100%;
+    margin: auto;
+}
+
+
+@media (min-width: 768px) {
+    .noticias{
+        flex-direction: row-reverse;
+        align-items: center;
+       }
+    
+    .noticias div{
+        margin: 0rem 2rem 2rem 2rem;
+    }
+    
+    .noticias h3{
+        font-weight: inherit; 
+        font-size: inherit;
+    }
+
+    .noticias-img{
+        height: 20rem;
+    }
+
+    .blog-noticias{
+        padding-bottom: 0rem;
+    }
+
+    .blog-noticias a{
+        margin-top: 0;
+    }
+
+    .noticias:nth-child(1){
+        margin-top: 2rem;
+    }
 }
 
 /* FORMULARIO */
@@ -332,7 +387,7 @@ p{
 .formulario{
     background-color: var(--gris);
     width: min(60rem, 100%);          /* "min" te indica que pone el valor mas pequeño: si 60rem o el 100% del ancho */
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2rem;
     border-radius: 1rem;
 }
@@ -400,10 +455,6 @@ p{
     }  
 }
 
-.padding_bottom h2{
-    margin-top: -1rem;
-}
-
 /* BOTON ARRIBA */
 
 .boton_arriba{
@@ -417,4 +468,5 @@ p{
 
 footer{
     text-align: center;
+    margin: 1rem auto;
 }
