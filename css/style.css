@@ -12,7 +12,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;         /* Para que el padding, border, etc no afecte el tamaño de las imagenes */
-        /* scroll-snap-type: y proximity; */
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;        /* para que se desplace lentamente en los enlaces */
 }
 
@@ -48,7 +48,9 @@ h1{
     scroll-snap-stop: always;
 }
 .sombra,
-.padding_bottom{
+.padding_bottom,
+.trabajos,
+.blog{
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -392,16 +394,13 @@ p{
     border-radius: 1rem;
 }
 
-.formulario fieldset{
-    border: none;
-}
-
-.formulario legend{
+.formulario legend {
+    display: block;
+    text-align: center;
     text-transform: uppercase;
     color: var(--primario);
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
